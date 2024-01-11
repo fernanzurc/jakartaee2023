@@ -15,6 +15,7 @@ public class Producto {
 	private int idProducto;
 	private String nombre;
 	private String categoria;
+	//no hace falta si nombre de atributo y columna coinciden
 	@Column(name = "precio")
 	private double precio;
 	public Producto(int idProducto, String nombre, String categoria, double precio) {
@@ -24,11 +25,9 @@ public class Producto {
 		this.categoria = categoria;
 		this.precio = precio;
 	}
-	
 	public Producto() {
 		super();
 	}
-
 	public int getIdProducto() {
 		return idProducto;
 	}
@@ -53,5 +52,6 @@ public class Producto {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
 	
 }

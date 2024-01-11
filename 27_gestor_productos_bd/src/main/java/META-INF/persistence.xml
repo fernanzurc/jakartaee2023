@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="27_gestor_productos_bd" transaction-type="RESOURCE_LOCAL">
+	<persistence-unit name="productosPU" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>model.Producto</class>
 		<properties>
 			<property name="javax.persistence.jdbc.password" value="root"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tienda"/>
-			<property name="javax.persistence.jdbc.driver" value="
-com.mysql.cj.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 		</properties>
 	</persistence-unit>
 </persistence>
