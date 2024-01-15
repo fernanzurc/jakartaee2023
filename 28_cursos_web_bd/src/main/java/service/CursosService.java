@@ -40,21 +40,10 @@ public class CursosService{
 	}
 	
 	public List<Curso> preciosCursoMax(double precioMax){
-		//creamos arraylist auxiliar
-		List<Curso> auxiliar=new ArrayList<>();
-		EntityManager em=getEntityManager();
-		String jpql="select c from Curso c";
-		TypedQuery<Curso> qr=em.createQuery(jpql, Curso.class);
-		List<Curso> cursos = qr.getResultList();
-		//recorremos arraylist principal y cada curso con precio
-		//igual o inferior al max será guardado en el auxiliar
-		for(Curso c:cursos) {
-			if(c.getPrecio()<=precioMax) {
-				auxiliar.add(c);
-			}
-		}
-		//devolvemos el arraylist auxiliar
-		return auxiliar;
+		String jpql="select c from Curso c where c.precio<=?1";
+		TypedQuery<Curso> query=getEntityManager().createQuery(jpql,Curso.class);
+		query.setParameter(1, precioMax);
+		return query.getResultList();
 	}
 	
 	public void eliminarCurso(String nombre) {
@@ -70,9 +59,14 @@ public class CursosService{
 	}
 	
 	public void modificarDuracion(String nombre, int nuevaDuracion) {
+		String jpql="update Curso c set c.duracion=?1 where c.nombre=?2";
 		EntityManager em=getEntityManager();
-		Curso c=em.find(Curso.class, nombre);
-		c.setDuracion(nuevaDuracion);
-		em.merge(c);
+		Query query=em.createQuery(jpql);
+		query.setParameter(1, nuevaDuracion);
+		query.setParameter(2, nombre);
+		EntityTransaction tx=em.getTransaction();
+		tx.begin();
+		query.executeUpdate();
+		tx.commit();
 	}
 }
