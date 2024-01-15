@@ -24,11 +24,11 @@ public class FrontController extends HttpServlet {
 				break;
 			case "doGuardar":
 				request.getRequestDispatcher("GuardarController").include(request, response);
-				urlView="nuevo.html";
+				urlView="menu.html";
 				break;
 			case "doLogin":
 				request.getRequestDispatcher("LoginController").include(request, response);
-				urlView="nuevo.html";
+				urlView=(Boolean)request.getAttribute("autenticado")?"menu.html":"error.jsp";
 				break;
 			case "toNuevo":
 				urlView="nuevo.html";
