@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>funciones de JS</title>
+</head>
+<body>
+	<h1>JS</h1>
+	<input type="button" value="pulsar aqui" onclick="alert(sumatorio(leerNumero()))">
+	
+	
+	
+	
+	
+	<script type="text/javascript">
+	function sumatorio(n) {
+		var s=0;
+		for(let i=1;i<=n;i++){
+			s+=i;
+		}
+		return s;
+	}
+	
+	function leerNumero(){
+		var n=prompt("Introduce número");
+		return n;
+	}
+		
+
+	</script>
+</body>
+</html>
