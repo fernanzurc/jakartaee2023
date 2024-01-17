@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	Nombre:<input type="text" id="nombre">
+	Categor�a:<input type="text" id="categoria">
+	Precio:<input type="text" id="precio"><br><br>
+	<input type="button" value="Guardar" onclick="guardar();">
+	<hr>
+	<br>
+	Categoria:<input type="text" id="cat">
+	<input type="button" value="Buscar" onclick="buscar();">
+	<br><br>
+	<div id="tabla">
+	
+	</div>
+	
+	<script type="text/javascript">
+		var productos=[];
+		function guardar(){
+			var producto=new Object();
+			producto.nombre=document.getElementById("nombre").value;
+			producto.categoria=document.getElementById("categoria").value;
+			producto.precio=document.getElementById("precio").value;
+			productos.push(producto);
+			resetear();
+		}
+		function buscar(){
+			var tabla="<table border='1'><tr><th>Nombre</th><th>Categor�a</th><th>Precio</th><tr>";
+			productos.forEach(function(p){
+				if(p.categoria==document.getElementById("cat").value){
+					tabla+="<tr><td>"+
+					p.nombre+"</td><td>"+
+					p.categoria+"</td><td>"+
+					p.precio+"</td></tr>";
+				}
+			});
+			tabla+="</table>";
+			document.getElementById("tabla").innerHTML=tabla;
+		}
+	
+		function resetear(){
+			document.getElementById("nombre").value="";
+			document.getElementById("categoria").value="";
+			document.getElementById("precio").value="";
+		}
+	
+	</script>
+	
+</body>
+</html>
