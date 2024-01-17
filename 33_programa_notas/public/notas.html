@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	Introduce nota:<input type="text" id="nota">
+	<input type="button" value="guardar" onclick="guardar()"><br><br>
+	<input type="button" value="media" onclick="media()"><p id="media"></p><br><br>
+	<input type="button" value="aprobados" onclick="aprobados()"><p id="aprobados"></p><br><br>
+	<input type="button" value="ver notas" onclick="mostrar()"><br><p id="notas"></p><br><br>
+	
+	<script type="text/javascript">
+		var notas=[];
+		function guardar(){
+			notas.push(parseInt(document.getElementById("nota").value));
+            resetear();
+		}
+		function media(){
+			var s=0;
+			for(let n of notas){
+				s+=n;
+			}
+			document.getElementById("media").innerText=s/notas.length;
+		}
+		function aprobados(){
+			var ap=0;
+			notas.forEach(function(n){
+				if(n>=5){
+					ap++;
+				}
+			});
+			document.getElementById("aprobados").innerText=ap;
+		}
+		function mostrar(){
+			document.getElementById("notas").innerText=notas.join("-");
+		}
+        function resetear(){
+        	document.getElementById("nota").value="";
+        }
+	</script>
+</body>
+</html>
