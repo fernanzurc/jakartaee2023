@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="Servlet" onsubmit="return validar()">
+		Usuario:<input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" /><br>
+		Password:<input type="password" id="password" name="password" placeholder="Ingrese su contrase�a" /><br>
+		<input type="submit" value="Enviar" onclick="validar();">
+	</form>
+	<script type="text/javascript">
+		function validar(){
+			var usuario=document.getElementById("usuario").value
+			var password=document.getElementById("password").value
+			if(usuario.length>=3&&password.length>=3){
+				alert("los datos son válidos para enviar");
+				return true;
+			}else{
+				alert("Los datos no cumplen las reglas para enviar");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
