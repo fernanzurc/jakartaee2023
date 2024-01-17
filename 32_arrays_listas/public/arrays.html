@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var data=[5,9];
+		//acceso posiciones
+		console.log(data[0]);
+		data[1]=20;
+		//agregar nuevos elementos
+		data.push(30);
+		data[3]=16;
+		console.log(data);
+		//tama�o de un array
+		console.log(data.length);
+		//recorrido
+		for(let n of data){
+			console.log(n);
+		}
+		data.forEach(n=>console.log(n));
+		data.forEach(function(n){
+			console.log(n);
+		});
+		//ordenacion
+		data.sort(function(a,b){
+			return a-b;
+		});
+		console.log(data);
+		//union de elementos
+		console.log(data.join("-"));
+	</script>
+</body>
+</html>
