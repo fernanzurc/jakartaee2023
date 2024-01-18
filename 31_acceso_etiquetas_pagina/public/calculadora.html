@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    Numero 1: <input type="text" id="n1"><br><br>
+    Numero 2: <input type="text" id="n2"><br><br>
+    <input type="button" value="sumar" onclick="sumar()">
+    <input type="button" value="multiplicar" onclick="multiplicar()"><br>
+    <input type="button" value="dividir" onclick="dividir()">
+    <br><br>
+    <h1 id="res"></h1>
+
+    <br><br>
+    <script>
+        function sumar(){
+            var n1=document.getElementById("n1").value;
+            var n2=document.getElementById("n2").value;
+            document.getElementById("res").innerText=parseInt(n1)+parseInt(n2);
+            resetear();
+        }
+        function multiplicar(){
+            var n1=document.getElementById("n1").value;
+            var n2=document.getElementById("n2").value;
+            document.getElementById("res").innerText=parseInt(n1)*parseInt(n2);
+            resetear();
+        }
+        function dividir(){
+            var n1=document.getElementById("n1").value;
+            var n2=document.getElementById("n2").value;
+            document.getElementById("res").innerText=parseInt(n1)/parseInt(n2);
+            resetear();
+        }
+        function resetear(){
+        	document.getElementById("n1").value="";
+        	document.getElementById("n2").value="";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+    .grande{color: blue;font-weight: 900;font-size: 40px;}
+    .peque{color: gray;font-weight: 100;font-size: 10px;}
+</style>
+</head>
+<body>
+	<p class="peque" onmouseenter="modificarEstilo(this,'grande')" onmouseout="modificarEstilo(this,'peque')">Texto primero</p>
+    <p class="peque" onmouseenter="modificarEstilo(this,'grande')" onmouseout="modificarEstilo(this,'peque')">Texto primero</p>
+    <p class="peque" onmouseenter="modificarEstilo(this,'grande')" onmouseout="modificarEstilo(this,'peque')">Texto primero</p>
+
+    <script>
+        function modificarEstilo(obj,estilo) {
+            obj.className=estilo;
+        }
+    </script>
+</body>
+</html>

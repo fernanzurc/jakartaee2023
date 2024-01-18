@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="campo"><br><br>
+	<input type="button" value="mostrar" onclick="mostrarDato();">
+	<p id="p1">
+		dato en párrafo
+	</p>
+	
+	<script type="text/javascript">
+		function mostrarDato(){
+			//muestra con un alert el valor
+			//escrito en la caja
+			//primero obtenemos objeto etiqueta
+			var obj=document.getElementById("campo");
+			//mediante propiedad value obtenemos valor
+			alert("Ha escrito: "+obj.value);
+			///////
+			var pr=document.getElementById("p1");
+			alert("El párrafo vale: "+pr.innerText);
+
+			//reseteamos
+			obj.value="";
+			pr.innerText="";
+		}
+		
+	</script>
+</body>
+</html>
